@@ -18,27 +18,29 @@ var views = {
 var handlers = {
     checkUncheck: function(index){
         let checkbox = checkboxes[index];
+        checkbox.nextSibling.nextSibling.classList.add('checked');
         if(isPressed == true && checkbox.checked==true){
             if(index>=lastCheckedIndex){
                 for(x=lastCheckedIndex; x<index; x++){
                     checkboxes[x].checked = true;
+                    checkboxes[x].nextSibling.nextSibling.classList.add('checked');
                 }
             }
             else{
                 for(x=lastCheckedIndex; x>index; x--){
+                    checkboxes[x].nextSibling.nextSibling.classList.add('checked');
                     checkboxes[x].checked = true;
                 }
             }
             lastCheckedIndex = index;
         }
         else if(checkbox.checked){
-            // alert('falls');
             lastCheckedIndex = index;
         }
         else{
+            checkbox.nextSibling.nextSibling.classList.remove('checked');
             lastCheckedIndex = "";
         }
-        // alert(lastCheckedIndex);
     },
     shiftPressed: function(e){
         if(e.keyCode == 16){

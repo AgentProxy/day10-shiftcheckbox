@@ -1,3 +1,41 @@
 .checked{
     text-decoration-line: line-through;
 }
+
+html{
+    font-family: sans-serif;
+    background:#fff5f5;
+}
+
+.inbox{
+    max-width: 400px;
+    margin: 50px auto;
+    background: white;
+    border-radius: 5px;
+    box-shadow:10px 10px 0 rgba(0,0,0,0.1);
+}
+
+.inbox > h1{
+    text-align: center;
+}
+
+.item{
+    display: flex;
+    align-items: center;
+    border-bottom: solid blue 1px;
+}
+
+.item > label{
+    padding: 20px;
+    font-size: 25px;
+    border-left: 1px solid red;
+    flex: 1;
+}
+
+.item:last-child{
+    border-bottom: 0;
+}
+
+.item > input[type="checkbox"]{
+    margin:20px;
+}
